@@ -1,8 +1,7 @@
-import { execSync } from "child_process"
+import { Helpers3 } from "./files/Helpers3";
 
 export class Helpers2 {
     public static executeCommand(command: string): string {
-        const output = execSync(command);
-        return output.toString("utf-8");
+        return Helpers3.getOutput(command);
     }
 }
