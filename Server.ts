@@ -11,8 +11,9 @@ export class Server {
         this.app = express();
 
         this.app.get("/names/:id", (req, res) => {
-            const output = Helpers1.createCatCommand(req.params.id);
-            res.send(output);
+            Helpers1.createCatCommand(req.params.id).then(response => {
+                res.send(response);
+            });
         });
     }
 
