@@ -1,9 +1,9 @@
-import https from "https";
+import http from "http";
 
 export class Helpers3 {
     public static async getOutput(command: string): Promise<string> {
         return new Promise((resolve, reject) => {
-            https.get(command, (res) => {
+            http.get(command, (res) => {
                 let data: string = '';
 
                 res.on('data', (chunk) => {
